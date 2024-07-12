@@ -3,59 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Findify</title>
+    <title>Custom Search</title>
     <link rel="stylesheet" href="styles.css">
+    <script async src="https://cse.google.com/cse.js?cx=5da1a61fcd6592880"></script>
 </head>
 <body>
     <div class="container">
-        <h1>Findify</h1>
+        <h1>Custom Search Engine</h1>
         <form id="search-form">
             <input type="text" id="query" placeholder="Search...">
             <button type="submit">Search</button>
         </form>
-        <div id="results"></div>
+        <div id="results">
+            <div class="gcse-searchresults-only"></div>
+        </div>
     </div>
-
-    <script>
-        const apiKey = 'AIzaSyBukhA5A-_qJbMEe3ru20tev_bBzYeMD9c';  // 제공된 API 키
-        const cx = '5da1a61fcd6592880';  // 제공된 Custom Search Engine ID
-
-        document.getElementById('search-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            var query = document.getElementById('query').value;
-            if (query.trim()) {
-                search(query);
-            }
-        });
-
-        async function search(query) {
-            const response = await fetch(`https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${cx}&q=${query}`);
-            const data = await response.json();
-            displayResults(data);
-        }
-
-        function displayResults(data) {
-            const resultsDiv = document.getElementById('results');
-            resultsDiv.innerHTML = '';
-            if (data.items) {
-                data.items.forEach(item => {
-                    const result = document.createElement('div');
-                    result.classList.add('result');
-                    result.innerHTML = `
-                        <h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
-                        <p>${item.snippet}</p>
-                    `;
-                    resultsDiv.appendChild(result);
-                });
-                // 스폰서 광고를 결과 사이에 포함
-                const ad = document.createElement('div');
-                ad.classList.add('ad');
-                ad.innerHTML = `<h3>Sponsored Ad</h3><p>광고 내용</p>`;
-                resultsDiv.appendChild(ad);
-            } else {
-                resultsDiv.innerHTML = '<p>No results found.</p>';
-            }
-        }
-    </script>
 </body>
 </html>
