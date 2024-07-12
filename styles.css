@@ -1,15 +1,14 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0;
-    padding: 20px;
 }
 
 .container {
-    text-align: center;
     background: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -19,13 +18,19 @@ body {
 }
 
 h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
 input[type="text"] {
     padding: 10px;
     font-size: 16px;
-    margin-right: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     width: 60%;
@@ -35,10 +40,11 @@ button {
     padding: 10px 20px;
     font-size: 16px;
     background-color: #28a745;
-    color: #fff;
+    color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin-left: 10px;
 }
 
 button:hover {
@@ -47,20 +53,38 @@ button:hover {
 
 #results {
     text-align: left;
-    margin-top: 20px;
     width: 100%;
 }
 
-.result, .ad {
+.result {
     margin-top: 20px;
     padding: 10px;
     border-bottom: 1px solid #ccc;
 }
 
-.result h3, .ad h3 {
+.result h3 {
+    font-size: 18px;
     margin: 0;
 }
 
-.result p, .ad p {
+.result p {
     margin: 5px 0;
+}
+
+.ad {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.ad h3 {
+    font-size: 16px;
+    margin: 0 0 5px 0;
+}
+
+.ad p {
+    margin: 0;
+    font-size: 14px;
 }
