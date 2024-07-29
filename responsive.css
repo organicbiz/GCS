@@ -14,7 +14,7 @@
   }
 
   #app td.gsc-input:has(input[type=text]) {
-    width: calc(100vw - 94px);
+    width: calc(100vw - 80px);
   }
 
   #app .gsc-control-cse .gsc-table-result {
@@ -79,5 +79,24 @@
 
   #app .gsc-control-cse .gsc-table-result .gs-image {
     border-radius: 8px;
+  }
+
+  .gsc-results .gsc-cursor-box {
+    border:none!important;
+  }
+
+  #app .gsc-results .gsc-cursor {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #app .gsc-results .gsc-cursor>div {
+    width:100%;
+    border:none;
+    font-size:16px;
+    margin: 0 !important;
+  }
+  .gcsc-find-more-on-google-root {
+    display: none !important;
   }
 }
